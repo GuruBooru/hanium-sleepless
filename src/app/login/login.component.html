@@ -1,0 +1,30 @@
+<div>
+  <div class=container>
+    <form class=login-form [formGroup]="loginForm" fxLayout="column" fxLayoutGap=".5rem" (submit)="login(loginForm)">
+      <!--ID 입력부-->
+      <div>
+        <div style="margin: 0px; float:left; width: 70%">
+          <div>
+            <label>ID : </label>
+            <input formControlName="id" id="id" class="login_info" type="text">
+          </div>
+          <!--Password 입력부-->
+          <div>
+            <label>Password : </label>
+            <input formControlName="pwd" id="pwd" class="login_info" type="text">
+          </div>
+        </div>
+        <button class="btn_form" id='login' type='submit'>Log In</button>
+
+      </div>
+
+
+      <!--login 버튼, 계정 생성 버튼-->
+      <div class='btn-container' fxLayout="column" fxLayoutGap="2rem">
+        <button class="btn_form" type='button' routerLink="/sign-up">Create Account</button>
+        <button class="btn_form" type='button' routerLink="/main">go main</button>
+      </div>
+    </form>
+
+  </div>
+</div>

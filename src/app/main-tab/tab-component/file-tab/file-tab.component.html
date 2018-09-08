@@ -1,0 +1,12 @@
+<form [formGroup]="fileTabForm" (ngSubmit)="onSubmitFile(fileInput.files, fileTabForm)">
+  <input type="file" class="file" #fileInput>
+
+  <div>
+    <label>VirusTotal</label>
+    <input formcontrolName= "virusTotal" id="virusTotal" type="checkbox">
+  </div>
+
+  <button type="submit" class="btn_form">
+    검사 시작
+  </button>
+</form>

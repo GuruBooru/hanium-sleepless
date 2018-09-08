@@ -1,0 +1,7 @@
+::ng-deep .main .mat-tab-list .mat-tab-labels {
+  font-size: 24pt;
+  color : white;
+
+  border: 0%;
+  background-color: hsl(240, 100%, 13%);
+}

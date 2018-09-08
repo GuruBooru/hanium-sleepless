@@ -1,0 +1,12 @@
+<form [formGroup]="urlTabForm" (ngSubmit)= "onSubmitURL(urlTabForm)">
+  <input type= "text" class="url" placeholder="URL을 입력하시오">
+
+  <div>
+    <label>VirusTotal</label>
+    <input formcontrolName= "virusTotal" id="virusTotal" type="checkbox">
+  </div>
+
+  <button type="submit" class= "btn_form">
+    검사 시작
+  </button>
+</form>

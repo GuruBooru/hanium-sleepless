@@ -1,0 +1,25 @@
+.sign-up-container {
+  font-size : 32px;
+}
+
+.sign-up-container.sign-up-info {
+  text-align : right;
+}
+
+.btn-container {
+  text-align : right;
+}
+
+.btn_form {
+  height: 30px;
+  width: 100px;
+  margin: 1% 1% 1% 1%;
+
+  border: 0%;
+  border-color: hsl(240, 100%, 13%);
+  border-radius: 10px;
+
+  font-size: 16pt;
+  color : white;
+  background-color: hsl(240, 100%, 13%);
+}

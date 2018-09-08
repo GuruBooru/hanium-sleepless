@@ -1,0 +1,37 @@
+@import url(//fonts.googleapis.com/earlyacess/nanumgothic.css);
+
+hr {
+  margin: 1% 0% 1% 0%;
+}
+
+.main-container {
+  margin :  3% 10% 3% 10%;
+  text-align: center;
+  font-family: '맑은 고딕';
+  font-size: 48pt;
+  color : white;
+}
+
+.user {
+  text-align: right;
+}
+
+.line {
+  background-color : black;
+  border-radius : 2px;
+  height: 4px;
+}
+
+.btn_form {
+  height: 50px;
+  width: 130px;
+  margin: 1% 1% 1% 1%;
+
+  border: 0%;
+  border-color: hsl(240, 100%, 13%);
+  border-radius: 10px;
+
+  font-size: 22pt;
+  color : white;
+  background-color: hsl(240, 100%, 13%);
+}
