@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Result } from './result/result.component';
 
 @Component({
   selector: 'app-history-tab',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HistoryTabComponent implements OnInit {
 
-  @Input() resultList: Array<any>;
+  @Input() resultList: Array<Result>;
 
   row: number;
   rowMaker: Array<any>;

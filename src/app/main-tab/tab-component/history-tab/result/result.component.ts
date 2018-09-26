@@ -1,6 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
+export interface Result {
+  isFile: string;
+  result_name: string;
+  result: string;
+  date: Date;
+}
+
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
@@ -8,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class ResultComponent implements OnInit {
 
-  @Input() result: any;
+  result: Result;
 
   isSave: boolean;
 
