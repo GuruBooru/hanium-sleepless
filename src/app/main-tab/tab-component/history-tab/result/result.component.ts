@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 export interface Result {
   isFile: string;
-  result_name: string;
+  content: string;
   result: string;
   date: Date;
 }
