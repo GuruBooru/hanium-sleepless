@@ -12,19 +12,6 @@ export interface PeriodicElement {
   result: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {isFile: '1', context: 'Hydrogen', date: '1.0079', result: 'H'},
-  {isFile: '2', context: 'Helium', date: '4.0026', result: 'He'},
-  {isFile: '3', context: 'Lithium', date: '6.941', result: 'Li'},
-  {isFile: '4', context: 'Beryllium', date: '9.0122', result: 'Be'},
-  {isFile: '5', context: 'Boron', date: '10.811', result: 'B'},
-  {isFile: '6', context: 'Carbon', date: '12.0107', result: 'C'},
-  {isFile: '7', context: 'Nitrogen', date: '14.0067', result: 'N'},
-  {isFile: '8', context: 'Oxygen', date: '15.9994', result: 'O'},
-  {isFile: '9', context: 'Fluorine', date: '18.9984', result: 'F'},
-  {isFile: '10', context: 'Neon', date: '20.1797', result: 'Ne'},
-];
-
 /**
  * @title Basic use of `<table mat-table>`
  */
@@ -34,14 +21,18 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './history-tab.component.html',
 })
 export class HistoryTabComponent {
-  displayedColumns: string[] = ['File/URL', 'Contexts', 'Date', 'Result'];
+  displayedColumns: string[] = ['File/URL', 'Contexts', 'Date', 'Result', 'select'];
   // dataSource = ELEMENT_DATA;
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  ELEMENT_DATA: PeriodicElement[];
+
+  dataSource = new MatTableDataSource<PeriodicElement>(this.ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
 
   historyTabForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserService) {  }
+  constructor(private fb: FormBuilder, private userService: UserService) {
+      this.setDataSource();
+   }
 
   isAllSelected() {
     const numSelected = this.selection.selected.length;
@@ -55,6 +46,8 @@ export class HistoryTabComponent {
       this.selection.clear() :
       this.dataSource.data.forEach(row => this.selection.select(row));
   }
+
+  setDataSource() {}
 
   onSubmitHistory(fb: FormGroup) {
     const id = sessionStorage.getItem('id');
