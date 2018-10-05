@@ -29,15 +29,26 @@ export class UserService {
     return this.http.post(this.url + '/login', {id: id, pwd: password});
   }
 
-  submitFile(id: string, file: FormData, isCheck: number) {
-    return this.http.post(this.url + `/file?id=${id}${isCheck}`, file);
+  // 파일 검사
+  submitFileVirusTotal(id: string, file: FormData) {
+    return this.http.post(this.url + `/file/VirusTotal?id=${id}`, file);
+  }
+  submitFile(id: string, file: FormData) {
+    return this.http.post(this.url + `/file?id=${id}`, file);
   }
 
-  submitUrl(id: string, url: string, isCheck: number) {
+  // URL 검사
+  submitUrlVirusTotal(id: string, url: string) {
+    return this.http.post(this.url + `/res_url/VirusTotal`, {id: id, res_url: url});
+  }
+  submitUrl(id: string, url: string) {
     return this.http.post(this.url + '/res_url', {id: id, res_url: url});
   }
 
+  // Hash 값 검사
   submitHash(id: string, hash: string) {
     return this.http.post(this.url + '/hash', {id: id, res_hash: hash});
   }
+
+  // 결과 리스트 받아오기
 }

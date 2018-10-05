@@ -9,7 +9,6 @@ import { FileTabComponent } from './file-tab.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-
   ],
   declarations: [FileTabComponent],
   exports: [FileTabComponent],

@@ -34,7 +34,7 @@ export class UrlTabComponent implements OnInit {
 
 
     // url 전송
-    this.userService.submitUrl(id, url, this.virusTotal).subscribe((res: any) => {
+    this.userService.submitUrl(id, url).subscribe((res: any) => {
       if (res.result === 'success') {
         form.value.url = '';
       } else {
