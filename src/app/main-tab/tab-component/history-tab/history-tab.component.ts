@@ -1,9 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { UserService } from '../../../service/user.service';
-import { MatTableDataSource } from '@angular/material';
-import { SelectionModel } from '@angular/cdk/collections';
+import { Observable } from 'rxjs';
 
 export interface PeriodicElement {
   isFile: string;
@@ -20,43 +19,23 @@ export interface PeriodicElement {
   styleUrls: ['./history-tab.component.css'],
   templateUrl: './history-tab.component.html',
 })
-export class HistoryTabComponent {
-  displayedColumns: string[] = ['File/URL', 'Contexts', 'Date', 'Result', 'select'];
-  // dataSource = ELEMENT_DATA;
-  ELEMENT_DATA: PeriodicElement[];
-
-  dataSource = new MatTableDataSource<PeriodicElement>(this.ELEMENT_DATA);
-  selection = new SelectionModel<PeriodicElement>(true, []);
-
+export class HistoryTabComponent implements OnInit {
   historyTabForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private userService: UserService) {
-      this.setDataSource();
-   }
+  userId = sessionStorage.getItem('id');
 
-  isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
+  // 테이블 단위로 받아올 때, 처리하는 방법
+  historyInfo: Observable<Array<any>>;
 
-    return numSelected === numRows;
+  constructor(private fb: FormBuilder, private userService: UserService) { }
+
+  ngOnInit() {
+    if (this.userId != null) {
+      this.historyInfo = this.userService.getHistory(this.userId);
+    }
   }
 
-  masterToggle() {
-    this.isAllSelected() ?
-      this.selection.clear() :
-      this.dataSource.data.forEach(row => this.selection.select(row));
-  }
-
-  setDataSource() {
-    const id = sessionStorage.getItem('id');
-
-    // this.ELEMENT_DATA = this.userService.getHistory(id);
-  }
-
-  onSubmitHistory(fb: FormGroup) {
-    const id = sessionStorage.getItem('id');
-    // 세부 확인할 검사결과 모음
-
-    // 검사결과 전송
+  onSubmitHistory(form: FormGroup) {
+    // report 볼 파일명, 유저 id 전송;
   }
 }

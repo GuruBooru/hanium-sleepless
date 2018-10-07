@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { UserService } from '../../../service/user.service';
-import { SelectionModel } from '@angular/cdk/collections';
 
 @Component({
   selector: 'app-file-tab',
@@ -11,7 +10,6 @@ import { SelectionModel } from '@angular/cdk/collections';
 })
 export class FileTabComponent implements OnInit {
   fileTabForm: FormGroup;
-  loading = false;
   vt_file: boolean;
 
   constructor(private fb: FormBuilder, private userService: UserService) {}
@@ -37,18 +35,18 @@ export class FileTabComponent implements OnInit {
     if (this.vt_file) {
       // VirusTotal 수행
       this.userService.submitFileVirusTotal(id, formData).subscribe((res: any) => {
-        this.loading = false;
-
         if (res.result === 'fail') {
+          alert(res.result);
+        } else {
           alert(res.result);
         }
       });
     } else {
       // VirusTotal 수행X
       this.userService.submitFile(id, formData).subscribe((res: any) => {
-        this.loading = false;
-
         if (res.result === 'fail') {
+          alert(res.result);
+        } else {
           alert(res.result);
         }
       });
