@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { UserService } from '../../../service/user.service';
@@ -47,7 +47,11 @@ export class HistoryTabComponent {
       this.dataSource.data.forEach(row => this.selection.select(row));
   }
 
-  setDataSource() {}
+  setDataSource() {
+    const id = sessionStorage.getItem('id');
+
+    // this.ELEMENT_DATA = this.userService.getHistory(id);
+  }
 
   onSubmitHistory(fb: FormGroup) {
     const id = sessionStorage.getItem('id');

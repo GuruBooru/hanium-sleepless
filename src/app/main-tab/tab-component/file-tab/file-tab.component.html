@@ -3,7 +3,7 @@
 
   <div>
     <label class='isVt'>VirusTotal</label>
-    <input formcontrolName= "virusTotal" id="virusTotal" type="checkbox">
+    <input type="checkbox" (change)="$event? isChecked() : null">
   </div>
 
   <button type="submit" class="btn_form">

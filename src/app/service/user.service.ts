@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { GlobalService } from './global.service';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -51,4 +52,9 @@ export class UserService {
   }
 
   // 결과 리스트 받아오기
+  getHistory(id: string): Observable<Array<any>> {
+    return this.http.get(this.url + `history?id=${id}`).map((res: any) => {
+      res.result === 'success' ? res.data : [];
+    });
+  }
 }
