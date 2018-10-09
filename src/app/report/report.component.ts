@@ -7,6 +7,9 @@ import * as jsPDF from 'jspdf';
 })
 export class ReportComponent {
   @ViewChild('content') content: ElementRef;
+  PDFtitle: String;
+
+
   public downloadPDF() {
     const doc = new jsPDF();
     const specialElementHandlers = {

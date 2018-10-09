@@ -35,20 +35,18 @@ export class FileTabComponent implements OnInit {
     if (this.vt_file) {
       // VirusTotal 수행
       this.userService.submitFileVirusTotal(id, formData).subscribe((res: any) => {
-        if (res.result === 'fail') {
+        /*if (res.result === 'fail') {
           alert(res.result);
-        } else {
-          alert(res.result);
-        }
+        }*/
+        alert(res.result);
       });
     } else {
       // VirusTotal 수행X
       this.userService.submitFile(id, formData).subscribe((res: any) => {
-        if (res.result === 'fail') {
+        /*if (res.result === 'fail') {
           alert(res.result);
-        } else {
-          alert(res.result);
-        }
+        }*/
+        alert(res.result);
       });
     }
   }
