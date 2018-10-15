@@ -35,7 +35,8 @@ export class WriteComponent implements OnInit {
       title: formGroup.get('title').value,
       pcontent: formGroup.get('pContent').value,
       pWriter: formGroup.get('pWriter').value,
-      pPassword: formGroup.get('pPassword').value
+      pPassword: formGroup.get('pPassword').value,
+      postingID: formGroup.get('postingID').value,
     };
 
     this.postService.sendPost(newPosting).subscribe((res: any) => {

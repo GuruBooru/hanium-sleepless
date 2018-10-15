@@ -10,7 +10,7 @@
 </div>
 
 <div *ngIf="posts$ | async as res">
-  <div class="container" *ngFor="let post of res.data">
+  <div class="container" *ngFor="let post of res">
     <div class="num">{{post.postingID}}</div>
     <div class="title">{{post.title}}</div>
     <div class="writer">{{post.pWriter}}</div>

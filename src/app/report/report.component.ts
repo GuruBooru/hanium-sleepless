@@ -3,7 +3,6 @@ import * as jsPDF from 'jspdf';
 import { Observable } from 'rxjs';
 import { UserService } from '../service/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-report',
