@@ -2,23 +2,33 @@
   <mat-tab-group class=main>
     <!-- File Tab -->
     <mat-tab label=File>
-      <app-file-tab></app-file-tab>
+      <ng-template matTabContent>
+        <app-file-tab></app-file-tab>
+      </ng-template>
     </mat-tab>
 
     <!-- URl Tab -->
     <mat-tab label=URL>
-      <app-url-tab></app-url-tab>
+      <ng-template matTabContent>
+        <app-url-tab></app-url-tab>
+      </ng-template>
     </mat-tab>
 
     <!-- Hash Tab -->
     <mat-tab label=Hash>
-      <app-hash-tab></app-hash-tab>
+      <ng-template matTabContent>
+        <app-hash-tab></app-hash-tab>
+      </ng-template>
     </mat-tab>
 
     <!-- History Tab -->
     <!-- 클릭 시 historyInfo를 얻어오는 방법 -->
     <mat-tab label=History>
-      <app-history-tab></app-history-tab>
+      <ng-template mat-tab-label>
+        <div (mousedown)="reloadHistory()">History</div>
+      </ng-template>
+
+      <app-history-tab [historyInfo]="userHistory"></app-history-tab>
     </mat-tab>
   </mat-tab-group>
 </div>

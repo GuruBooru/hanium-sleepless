@@ -1,0 +1,19 @@
+<div class="container">
+  <button (click)="write()">글쓰기</button>
+</div>
+
+<div class="container_top">
+  <div class="num">No.</div>
+  <div class="title">제목</div>
+  <div class="writer">글쓴이</div>
+  <div class="date">날짜</div>
+</div>
+
+<div *ngIf="posts | async as res">
+  <div class="container" *ngFor="let post of res.data">
+    <div class="num">{{post.postingID}}</div>
+    <div class="title">{{post.pTitle}}</div>
+    <div class="writer">{{post.pWriter}}</div>
+    <div class="date">{{post.pDate}}</div>
+  </div>
+</div>

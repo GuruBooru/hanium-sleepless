@@ -6,6 +6,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 
 import { ReportComponent } from './report/report.component';
 import { MainTabComponent } from './main-tab/main-tab.component';
+import { BoardComponent } from './board/board.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'main'},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'sign-up', component: SignUpComponent },
   {path: 'report', component: ReportComponent},
+  {path: 'board', component: BoardComponent},
 ];
 
 @NgModule ({

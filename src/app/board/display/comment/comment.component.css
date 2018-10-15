@@ -1,0 +1,59 @@
+.comment
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+li
+{
+  display: flex;
+  flex-direction: row;
+}
+.comment-list
+{
+  display: flex;
+  width: 800px;
+  flex-direction: row;
+}
+.comment-header
+{
+  display: flex;
+  width: 150px;
+  flex-direction: column;
+}
+.writer-font
+{
+  font-size: 12pt;
+  font-weight: bold;
+}
+.date-font
+{
+  font-size: 8pt;
+  color: gray;
+}
+.comment-main
+{
+  display: flex;
+  width: 650px;
+  flex-flow: row;
+}
+.comment-content
+{
+  display: flex;
+  width: 550px;
+  font-size: 12pt;
+  color: gray;
+}
+.comment-button
+{
+  display: flex;
+  width: 100px;
+  align-items: flex-end;
+  align-content: flex-end;
+}
+.comment-input
+{
+  width: 750px;
+}
+

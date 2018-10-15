@@ -1,0 +1,72 @@
+h1 {
+  text-align: center;
+  font-size: 30pt;
+}
+
+h2 {
+  color:rgb(70, 65, 97);
+  font-size: 15pt;
+}
+
+h3 {
+  text-align: left;
+  padding: 0.3em;
+  color:rgb(70, 65, 97);
+  font-size: 14pt;
+  margin: 1em 1em 1em 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.titlegroup {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: auto;
+}
+
+.usergroup {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.title {
+  margin: 1em 1em 1em 1em;
+  padding: 0.3em;
+  block-size: 16pt;
+  border-color: rgb(70, 65, 97);
+  font-size: 12pt;
+}
+
+textarea {
+  padding: 0.5em;
+  block-size: 25em;
+  width: 55em;
+  border-color: rgb(70, 65, 97);
+  font-size: 12pt;
+  border-width: 0.15em;
+}
+
+.userinfo {
+  margin: 1em;
+  padding: 0.1em;
+  block-size: 17pt;
+  border-color: rgb(70, 65, 97);
+  font-size: 12pt;
+}
+
+button {
+  border:0px;
+  margin-left: 19em;
+  background-color :rgb(70, 65, 97);
+  color: white;
+  block-size: 25pt;
+  inline-size: 70pt;
+  font-size: 13pt;
+}

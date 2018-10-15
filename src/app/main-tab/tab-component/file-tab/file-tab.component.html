@@ -1,5 +1,10 @@
 <form [formGroup]="fileTabForm" (ngSubmit)="onSubmitFile(fileInput.files, fileTabForm)" class='file_Tab'>
-  <input type="file" class="file" #fileInput>
+  <div class="fileContainer">
+    <input class="upload-name" value="파일 선택" disable="disable">
+
+    <label for=ex_file class="fileLabel">File Upload</label>
+    <input type="file" id="ex_file" class="upload-hidden" #fileInput >
+  </div>
 
   <div>
     <label class='isVt'>VirusTotal</label>

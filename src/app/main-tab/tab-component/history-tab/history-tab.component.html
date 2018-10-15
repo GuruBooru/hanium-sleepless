@@ -1,19 +1,20 @@
-<form [formGroup]="historyTabForm" class='historyTab' (ngSubmit) = "onSubmitHistory(historyTabForm)">
+<div>
   <table class='history'>
     <tr> <!-- 테이블 헤더 -->
       <td>Dates</td>
       <td>Contents</td>
-      <td>Result</td>
-      <td><input type="checkbox" name='masterCheck'></td>
+      <td>File/URL</td>
+      <td></td>
     </tr>
     <tr *ngFor= 'let history of historyInfo | async; let i = index'>
-      <td>history.date</td>
-      <td>history.content</td>
-      <td>history.result</td>
-      <td><input type="checkbox" name=`rowCheck=${{i}}`></td>
+      <td>{{history.date}}</td>
+      <td>{{history.file_url_name}}</td>
+      <td>{{history.isfile}}</td>
+      <td><button type="button"
+        (click)="navigateToReport(history.scan_id, history.file_md5_url, history.isfile)"
+         routerLink="/report">
+         .pdf 파일 보기</button>
+        </td>
     </tr>
-
   </table>
-
-  <button type="submit" class= "btn_form">PDF 변환</button>
-</form>
+</div>

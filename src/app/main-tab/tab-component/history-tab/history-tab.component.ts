@@ -1,15 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import {Component, OnInit, Input} from '@angular/core';
+import { Router} from '@angular/router';
 
 import { UserService } from '../../../service/user.service';
 import { Observable } from 'rxjs';
-
-export interface PeriodicElement {
-  isFile: string;
-  context: string;
-  date: string;
-  result: string;
-}
 
 /**
  * @title Basic use of `<table mat-table>`
@@ -19,23 +12,13 @@ export interface PeriodicElement {
   styleUrls: ['./history-tab.component.css'],
   templateUrl: './history-tab.component.html',
 })
-export class HistoryTabComponent implements OnInit {
-  historyTabForm: FormGroup;
-
-  userId = sessionStorage.getItem('id');
-
+export class HistoryTabComponent {
   // 테이블 단위로 받아올 때, 처리하는 방법
-  historyInfo: Observable<Array<any>>;
+  @Input() historyInfo: Observable<any>;
 
-  constructor(private fb: FormBuilder, private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit() {
-    if (this.userId != null) {
-      this.historyInfo = this.userService.getHistory(this.userId);
-    }
-  }
-
-  onSubmitHistory(form: FormGroup) {
-    // report 볼 파일명, 유저 id 전송;
+  navigateToReport(scan_id, file_md5_url, isfile) {
+    this.router.navigate([`/report`, {scan_id: scan_id, file_md5_url: file_md5_url, isfile: isfile}]);
   }
 }

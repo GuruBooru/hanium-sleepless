@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, pipe } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { GlobalService } from './global.service';
 import { map } from 'rxjs/operators';
@@ -52,9 +52,25 @@ export class UserService {
   }
 
   // 결과 리스트 받아오기
-  getHistory(id: string): Observable<Array<any[]>> {
-    return this.http.get(this.url + `history?id=${id}`).pipe(
+  getHistory(id: string): Observable<any> {
+    return this.http.get(this.url + `/history?id=${id}`).pipe(
       map((res: any) => res.result === 'success' ? res.data : [])
     );
+  }
+
+  getReport(id, scan_id, file_md5_url, isfile): Observable<any> {
+    console.log(id);
+    console.log(scan_id);
+    console.log(file_md5_url);
+    console.log(isfile);
+
+    return this.http.get(this.url + `/report/virustotal?
+    id=${id}&scan_id=${scan_id}&isfile=${isfile}&file_md5_url=${file_md5_url}`).pipe(
+      map((res: any) => res.result === 'success' ? res.data : [])
+    );
+  }
+
+  getBoard() {
+    return this.http.post(this.url + '/board', {});
   }
 }

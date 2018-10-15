@@ -1,0 +1,40 @@
+<div class="comment">
+    <p>댓글</p>
+
+    <!--조회된 댓글 목록!-->
+    <div class="comment-list" *ngIf="comments$ | async as res">
+      <ul>
+        <li *ngFor="let comment of res.data;">
+          <!--댓글-->
+          <div class="comment-header">
+            <p class="writer-font">{{ comment.cWriter }}</p>
+            <p class="date-font">{{ comment.cDate }}</p>
+          </div>
+
+          <div class="comment-main">
+            <div class="comment-content">
+              <p>{{ comment.cContent }}</p>
+            </div>
+            <div class="comment-button">
+              <button (click)="postReComment(CommentFormGroup)">수정</button>
+              <button (click)="postDelComment(CommentFormGroup)">삭제</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!--댓글 입력란-->
+    <p>댓글 등록</p>
+    <form [formGroup]="CommentFormGroup" (submit)="postNewComment(CommentFormGroup)">
+      <div class="comment-input">
+        <textarea formControlName="cContent" rows="10" cols="115"></textarea>
+        <div class="comment-writer-information">
+          <input formControlName="cWriter" type="text">
+          <input formControlName="cPassword" type="password">
+          <button type="submit">등록</button>
+        </div>
+      </div>
+    </form>
+
+  </div>

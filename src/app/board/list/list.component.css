@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+ }
+
+ .container_top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+ }
+
+ .container_top > div { background-color: rgb(117, 227, 255)}
+ .container > div {background-color: gainsboro}
+
+ .item_num {
+   text-align: center;
+   padding: 10px;
+   flex-grow: 0;
+ }
+
+ .item_title {
+  text-align: center;
+  padding: 10px;
+  flex-grow: 1;
+ }
+
+ .item_writer {
+  text-align: center;
+  padding: 10px;
+  flex-grow: 0;
+ }
+
+ .item_date {
+  text-align: center;
+  padding: 10px;
+  flex-grow: 0;
+ }
+
+ button{
+  text-align: center;
+  background:rgb(117, 227, 255);
+  color:#fff;
+  border:none;
+  height:30px;
+  font-size:20px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+button:hover{
+  background:rgb(255, 255, 255);
+  color: rgb(117, 227, 255);
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: rgb(117, 227, 255);
+  transition:400ms ease all;
+}
