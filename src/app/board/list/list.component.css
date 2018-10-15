@@ -19,25 +19,25 @@
  .container_top > div { background-color: rgb(117, 227, 255)}
  .container > div {background-color: gainsboro}
 
- .item_num {
+ .num {
    text-align: center;
    padding: 10px;
    flex-grow: 0;
  }
 
- .item_title {
+ .title {
   text-align: center;
   padding: 10px;
   flex-grow: 1;
  }
 
- .item_writer {
+ .writer {
   text-align: center;
   padding: 10px;
   flex-grow: 0;
  }
 
- .item_date {
+ .date {
   text-align: center;
   padding: 10px;
   flex-grow: 0;
