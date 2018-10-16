@@ -5,5 +5,5 @@ html, body, app-root {
   flex-direction: column;
   height: 100%;
 
-  background-color : hsl(210, 100%, 75%);
+  background-color : white;
 }

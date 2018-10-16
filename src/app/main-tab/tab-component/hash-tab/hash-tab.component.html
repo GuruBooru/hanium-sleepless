@@ -1,6 +1,7 @@
 <form [formGroup]="hashTabForm" (ngSubmit)= "onSubmitHash(hashTabForm)">
-  <input type= "text" class="hash" placeholder="해쉬값을 입력하시오">
-  <button type="submit" class= "btn_form">
-    검사 시작
-  </button>
+  <input formControlName="hash" type= "text" class="hash" placeholder="해쉬값을 입력하시오">
+
+    <div class = buttonposition>
+      <button type="submit" class="btn_form">검사 시작</button>
+    </div>
 </form>

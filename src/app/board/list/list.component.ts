@@ -9,18 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
-  id: number;
   posts$: Observable<any>;
 
   constructor(private postService: PostService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.posts$ = this.postService.getPosts();
-    this.id = this.route.snapshot.params.id;
   }
 
   write() {
     this.router.navigate(['/write']);
+  }
+
+  navigate(id) {
+    this.router.navigate([`/post/${id}`]);
   }
 }

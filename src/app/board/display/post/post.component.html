@@ -1,44 +1,42 @@
 <div class="container">
-  <div class="PageWrap">
+    <div class="Pagewrap">
 
-    <div>
-      <div class="pTitle">
-        Sleepless
+      <div>
+        <div class="Ptitle">
+          Sleepless
+        </div>
+        <div class="Bblock"></div>
       </div>
-      <div class="blank"></div>
-    </div>
 
-    <div>
-      <div class="WTitle">
-        <div *ngIf="posts | async as res">
-          <div *ngFor="let post of res.data">
-            {{post.title}}
-          </div>
+
+      <div>
+        <div class="Wtitle">
+            <div *ngIf="posts$ | async as res">
+                <div *ngFor="let post of res">
+                  {{ post.title }}
+                </div>
+              </div>
+        </div>
+        <div class="Winformation">
+            <div *ngIf="posts$ | async as res">
+                <div *ngFor="let post of res">
+                  {{ post.pWriter }}
+                  {{ post.pDate }}
+                </div>
         </div>
       </div>
 
-      <div class="Winformation">
-        <div *ngIf="posts | async as res">
-          <div *ngFor="let post of res.data">
-            {{post.pWriter}}
-            {{post.pDate}}
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="wHeight">
-        <div class="wWrite">
-          <div *ngIf="posts | async as res">
-            <div *ngFor="let post of res.data">
-              {{post.pContent}}
-            </div>
-          </div>
-        </div>
-
+      <div>
         <hr>
-
+        <div class="wHeight">
+          <div class="wWrite">
+              <div *ngIf="posts$ | async as res">
+                  <div *ngFor="let post of res">
+                    {{ post.pContent }}
+                  </div>
+              </div>
+          </div>
+        <hr>
       </div>
 
       <div class="Wbutton">
@@ -46,7 +44,6 @@
         <input type="button" name="delete" value="삭제">
       </div>
 
-      <button (click)="navigate()">이동</button>
+  <button (click)='navigate()'>이동</button>
     </div>
   </div>
-</div>

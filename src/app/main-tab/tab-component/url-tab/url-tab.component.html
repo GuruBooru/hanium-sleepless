@@ -1,12 +1,17 @@
 <form [formGroup]="urlTabForm" (ngSubmit)= "onSubmitURL(urlTabForm)">
-  <input type= "text" class="url" placeholder="URL을 입력하시오">
+  <input formControlName="url" type= "text" class="url" placeholder="URL을 입력하시오">
 
-  <div>
-    <label>VirusTotal</label>
-    <input formcontrolName= "virusTotal" id="virusTotal" type="checkbox">
+  <div class = "user">
+    <input id="checkbox1" name ="checkbox1" type="checkbox" (change)="$event? vtChecked() : null">
+    <label for = "checkbox1">VirusTotal</label>
+    <br/>
+    <input id="checkbox2" name ="checkbox2" type="checkbox"(change)="$event? yrChecked() : null">
+    <label for = "checkbox2">YaraRule</label>
   </div>
 
+  <div class = "user">
   <button type="submit" class= "btn_form">
     검사 시작
   </button>
+  </div>
 </form>

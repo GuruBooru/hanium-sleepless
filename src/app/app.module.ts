@@ -12,11 +12,13 @@ import { SignUpModule } from './sign-up/sign-up.module';
 import { ReportModule } from './report/report.module';
 import { MainTabModule } from './main-tab/main-tab.module';
 import { BoardModule } from './board/board.module';
+import { TopComponent } from './top/top.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    TopComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -11,6 +11,8 @@ import { UserService } from '../../../service/user.service';
 export class FileTabComponent implements OnInit {
   fileTabForm: FormGroup;
   vt_file: boolean;
+  yr_file: boolean;
+  upload_name = '파일 선택';
 
   constructor(private fb: FormBuilder, private userService: UserService) {}
 
@@ -20,8 +22,12 @@ export class FileTabComponent implements OnInit {
     });
   }
 
-  isChecked() {
+  vtChecked() {
     this.vt_file ? this.vt_file = false : this.vt_file = true;
+  }
+
+  yrChecked() {
+    this.yr_file ? this.yr_file = false : this.yr_file = true;
   }
 
   onSubmitFile(files: FileList, form: FormGroup) {
@@ -35,19 +41,18 @@ export class FileTabComponent implements OnInit {
     if (this.vt_file) {
       // VirusTotal 수행
       this.userService.submitFileVirusTotal(id, formData).subscribe((res: any) => {
-        /*if (res.result === 'fail') {
-          alert(res.result);
-        }*/
-        alert(res.result);
-      });
-    } else {
-      // VirusTotal 수행X
-      this.userService.submitFile(id, formData).subscribe((res: any) => {
-        /*if (res.result === 'fail') {
-          alert(res.result);
-        }*/
-        alert(res.result);
+        alert('VirusTotal ' + res.result);
       });
     }
+    if (this.yr_file) {
+      // YaraRule 수행
+      this.userService.submitFile(id, formData).subscribe((res: any) => {
+        alert('YaraRule ' + res.result);
+      });
+    }
+  }
+
+  changeName(files: FileList) {
+    this.upload_name = files[0].name;
   }
 }

@@ -16,36 +16,44 @@
   margin: auto;
  }
 
- .container_top > div { background-color: rgb(117, 227, 255)}
+ .container_top > div { background-color:black}
  .container > div {background-color: gainsboro}
 
  .num {
    text-align: center;
    padding: 10px;
    flex-grow: 0;
+   color:white;
+   font-size:20pt;
  }
 
  .title {
   text-align: center;
   padding: 10px;
   flex-grow: 1;
+  color:white;
+  font-size:20pt;
  }
 
  .writer {
   text-align: center;
   padding: 10px;
   flex-grow: 0;
+  color:white;
+  font-size:20pt;
  }
 
  .date {
   text-align: center;
   padding: 10px;
   flex-grow: 0;
+  color:white;
+  font-size:20pt;
  }
 
  button{
   text-align: center;
-  background:rgb(117, 227, 255);
+  background:black;
   color:#fff;
   border:none;
   height:30px;
@@ -56,8 +64,8 @@
   outline:none;
 }
 button:hover{
-  background:rgb(255, 255, 255);
-  color: rgb(117, 227, 255);
+  background:black;
+  color:#A9A9A9;
 }
 button:before,button:after{
   content:'';

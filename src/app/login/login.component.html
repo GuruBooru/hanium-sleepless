@@ -2,29 +2,29 @@
   <div class=container>
     <form class=login-form [formGroup]="loginForm" fxLayout="column" fxLayoutGap=".5rem" (submit)="login(loginForm)">
       <!--ID 입력부-->
-      <div>
-        <div style="margin: 0px; float:left; width: 70%">
-          <div>
-            <label>ID : </label>
-            <input formControlName="id" id="id" class="login_info" type="text">
-          </div>
-          <!--Password 입력부-->
-          <div>
-            <label>Password : </label>
-            <input formControlName="pwd" id="pwd" class="login_info" type="text">
-          </div>
-        </div>
-        <button class="btn_form" id='login' type='submit'>Log In</button>
-
-      </div>
-
-
-      <!--login 버튼, 계정 생성 버튼-->
-      <div class='btn-container' fxLayout="column" fxLayoutGap="2rem">
+      <div style="margin: 0px; text-align: center;">
+        <table>
+          <tr>
+            <td><label>ID</label></td>
+            <td>:</td>
+            <td><input formControlName="id" id="id" class="login_info" type="text"></td>
+            <!-- login 버튼 -->
+            <td rowspan=2><button class="btn_form" id='login' type='submit'>Log In</button></td>
+          </tr>
+          <tr>
+            <td><label>Password</label></td>
+            <td>:</td>
+            <td><input formControlName="pwd" id="pwd" class="login_info" type="password"></td>
+          </tr>
+        </table>
+        <br>
+        <!--계정 생성 버튼, 메인 화면 이동 -->
+    <div class='btn-container' >
         <button class="btn_form" type='button' routerLink="/sign-up">Create Account</button>
-        <button class="btn_form" type='button' routerLink="/main">go main</button>
+        <button class="btn_form" type='button' routerLink="/main">Go Main</button>
+    </div>
       </div>
-    </form>
 
+    </form>
   </div>
 </div>

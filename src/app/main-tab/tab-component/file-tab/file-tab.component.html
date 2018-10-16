@@ -1,17 +1,19 @@
 <form [formGroup]="fileTabForm" (ngSubmit)="onSubmitFile(fileInput.files, fileTabForm)" class='file_Tab'>
   <div class="fileContainer">
-    <input class="upload-name" value="파일 선택" disable="disable">
+    <input class="upload-name" value={{upload_name}} disable="disable" formContorlName='upload-name'>
 
     <label for=ex_file class="fileLabel">File Upload</label>
-    <input type="file" id="ex_file" class="upload-hidden" #fileInput >
+    <input type="file" id="ex_file" class="upload-hidden" #fileInput (change)="$event? changeName(fileInput.files) : null">
   </div>
 
-  <div>
-    <label class='isVt'>VirusTotal</label>
-    <input type="checkbox" (change)="$event? isChecked() : null">
+  <div class = "user">
+    <input id="checkbox1" name="checkbox1" type="checkbox" (change)="$event? vtChecked() : null"><label for ="checkbox1">VirusTotal</label>
+    <br/>
+    <input id="checkbox2" name="checkbox2" type="checkbox" (change)="$event? yrChecked() : null"><label for ="checkbox2">YaraRule</label>
+
   </div>
 
-  <button type="submit" class="btn_form">
-    검사 시작
-  </button>
+  <div class = buttonposition>
+  <button type="submit" class="btn_form">검사 시작</button>
+  </div>
 </form>

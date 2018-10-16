@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('id', id);
 
         // main 화면으로 전환
-        this.router.navigateByUrl('/main');
+        this.router.navigateByUrl('');
       } else {
         alert(res.result);
       }

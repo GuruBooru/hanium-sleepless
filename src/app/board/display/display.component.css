@@ -30,3 +30,7 @@ button {
   inline-size: 70pt;
   font-size: 13pt;
 }
+
+.board-container {
+  margin: 3% 10% 3% 10%;
+}

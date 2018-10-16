@@ -12,35 +12,38 @@
 
 .Ptitle{
   margin-top:0.5em;
-  font-size: 2em;
+  font-size: 25pt;
   font-weight: bolder;
+  margin-bottom: 0.1em;
 }
 .Bblock{
-  height: 1.2em;
+  height: 0.1em;
   background-color: black;
-  margin-bottom: 1em;
+  margin-bottom: 0.2em;
 }
 
 
 .Wtitle{
-  font-size:1.5em;
+  font-size:22pt;
   font-weight: bold;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.1em;
 }
 .Winformation{
-  font-size:1em;
+  font-size:0.3em;
   font-weight: 300;
+  text-align : right;
 }
 
 .wWrite{
   word-break: break-all;
   vertical-align: top;
+  font-size:0.3em;
 }
 
 .wHeight{
     height: 15em;
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 .Wbutton{

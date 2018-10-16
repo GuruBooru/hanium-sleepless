@@ -47,9 +47,4 @@ export class CommentComponent implements OnInit {
     this.router.navigate(['/']);
     // 비밀번호 일치시 DB로 수정된 댓글 전송
   }
-
-  postDelComment(cWriter: string, cPassword: string, cContent: string) {
-    // 비밀번호 확인 페이지로 이동
-    // 비밀번호 일치시 DB로 삭제할 댓글 전송
-  }
 }

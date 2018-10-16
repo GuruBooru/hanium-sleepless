@@ -14,14 +14,15 @@ export class WriteComponent implements OnInit {
   formGroup: FormGroup;
   posts: Observable<any>;
   page_title = '[sleepless]';
+
   number = 0;
   newTitle: string;
-  postingID: string;
+  postingId: string;
 
   constructor(private formbuilder: FormBuilder, private postService: PostService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.postingID = this.route.snapshot.params.id;
+    this.postingId = this.route.snapshot.params.id;
     this.formGroup = this.formbuilder.group({
       title: ['', [Validators.required]],
       pContent: [''],
@@ -33,10 +34,9 @@ export class WriteComponent implements OnInit {
   add_click(formGroup: FormGroup): void {
     const newPosting = {
       title: formGroup.get('title').value,
-      pcontent: formGroup.get('pContent').value,
+      pContent: formGroup.get('pContent').value,
       pWriter: formGroup.get('pWriter').value,
       pPassword: formGroup.get('pPassword').value,
-      postingID: formGroup.get('postingID').value,
     };
 
     this.postService.sendPost(newPosting).subscribe((res: any) => {

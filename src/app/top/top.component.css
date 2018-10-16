@@ -1,0 +1,28 @@
+.user {
+  text-align: right;
+}
+
+.line {
+  background-color : black;
+  border-radius : 2px;
+  height: 4px;
+}
+
+.btn_form {
+  height: 50px;
+  width: 130px;
+  margin: 1% 1% 1% 1%;
+  color: #71DFBE;
+  border-radius: 4px;
+  text-align:center;
+  color : white;
+  background-color: #2B2D2F;
+  font: bold 1.25rem/1 poppins;
+  font-family: "HY헤드라인M";
+}
+
+.userID {
+  color : #2b2d2f;
+  font: bold 1.25rem/1 poppins;
+  font-family: "HY헤드라인M";
+}

@@ -10,34 +10,27 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+  posts$: Observable<any>;
 
-  posts: Observable<any>;
-
-  postform: FormGroup;
-  pName: string;
-  pTime: string;
-  pTitle: string;
-  posting: string;
-  pNum: string;
+  readform: FormGroup;
+  pName: String;
+  pTime: String;
+  pTitle: String;
+  posting: String;
+  pNum: String;
   postingInfo: any[];
-  id: string;
+  id: number;
 
-  constructor(private fb: FormBuilder, private postService: PostService, private route: ActivatedRoute, private router: Router) {
-    this.createForm();
-  }
-
-  ngOnInit() {
-    this.id = this.route.snapshot.params.id;
-    this.posts = this.postService.getPosts();
-  }
-
+  constructor(private fb: FormBuilder, private postService: PostService, private route: ActivatedRoute , private router: Router) {
+     this.createForm();
+     }
   createForm() {
-    this.postform = this.fb.group({
-      pTime: ['', Validators.required],
-      pNum: ['', Validators.required],
-      pName: ['', Validators.required],
-      posting: ['', Validators.required],
-      pTitle: ['', Validators.required]
+    this.readform = this.fb.group({
+      pTime: [' ', Validators.required ],
+      pNum: [' ', Validators.required ],
+      pName: [' ', Validators.required ],
+      posting: [' ', Validators.required ],
+      pTitle: [' ', Validators.required ]
     });
   }
 
@@ -49,7 +42,15 @@ export class PostComponent implements OnInit {
     this.pTime = this.postingInfo[4];
   }
 
+  ngOnInit() {
+    this.id = this.route.snapshot.params.id;
+    this.posts$ = this.postService.getPost(this.id);
+
+    // this.postingInfo = this.posts$[this.id - 1];
+    // this.formload();
+  }
+
   navigate() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/board']);
   }
 }

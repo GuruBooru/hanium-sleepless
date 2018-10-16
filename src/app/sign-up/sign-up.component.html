@@ -1,24 +1,30 @@
 <div>
   <div class='sign-up-container' fxFlex.gt-sm="500px" fxLayout="column">
     <form class='sign-up-form' [formGroup]="signUpFormGroup" fxLayout="column" fxLayoutGap="1rem" (submit)="signup(signUpFormGroup)" ngNativeValidate>
-      <div class="form_control_group">
-        <label class='sign-up-info'>ID : </label>
-        <input formControlName="id" class="form_control" id=ID type=text>
-      </div>
 
       <div class="form_control_group">
-        <label class='sign-up-info'>Password : </label>
-        <input formControlName="pwd" class="form_control" id=Pwd type=text>
-      </div>
-
-      <div class="form_control_group">
-        <label class='sign-up-info'>User Name : </label>
-        <input formControlName="user_name" class="form_control" id=userName type=text>
-      </div>
-
-      <div class="form_control_group">
-        <label class='sign-up-info'>Email : </label>
-        <input formControlName="email" class="form_control" id=email type=email>
+        <table>
+          <tr>
+            <td><label class='sign-up-info'>ID</label></td>
+            <td><label class='sign-up-info'> : </label></td>
+            <td><input formControlName="id" class="form_control" id=ID type=text></td>
+          </tr>
+          <tr>
+            <td><label class='sign-up-info'>Password</label></td>
+            <td><label class='sign-up-info'>:</label></td>
+            <td><input formControlName="pwd" class="form_control" id=Pwd type=password></td>
+          </tr>
+          <tr>
+            <td><label class='sign-up-info'>User Name</label></td>
+            <td><label class='sign-up-info'>:</label></td>
+            <td><input formControlName="user_name" class="form_control" id=userName type=text></td>
+          </tr>
+          <tr>
+            <td><label class='sign-up-info'>Email</label></td>
+            <td><label class='sign-up-info'>:</label></td>
+            <td><input formControlName="email" class="form_control" id=email type=email></td>
+          </tr>
+        </table>
       </div>
 
       <div>
@@ -28,8 +34,9 @@
 
       <div class='btn-container' fxLayout="column" fxLayoutGap="2rem">
         <button class="btn_form" type="submit">Sign Up</button>
-        <button class="btn_form" routerLink="/main">go main</button>
+        <button class="btn_form" routerLink="/main">Go Main</button>
       </div>
+
     </form>
   </div>
 </div>

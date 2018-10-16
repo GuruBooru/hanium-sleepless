@@ -1,6 +1,4 @@
 <div class="comment">
-    <p>댓글</p>
-
     <!--조회된 댓글 목록!-->
     <div class="comment-list" *ngIf="comments$ | async as res">
       <ul>
@@ -17,7 +15,6 @@
             </div>
             <div class="comment-button">
               <button (click)="postReComment(CommentFormGroup)">수정</button>
-              <button (click)="postDelComment(CommentFormGroup)">삭제</button>
             </div>
           </div>
         </li>
@@ -25,7 +22,6 @@
     </div>
 
     <!--댓글 입력란-->
-    <p>댓글 등록</p>
     <form [formGroup]="CommentFormGroup" (submit)="postNewComment(CommentFormGroup)">
       <div class="comment-input">
         <textarea formControlName="cContent" rows="10" cols="115"></textarea>

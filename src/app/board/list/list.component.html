@@ -12,7 +12,7 @@
 <div *ngIf="posts$ | async as res">
   <div class="container" *ngFor="let post of res">
     <div class="num">{{post.postingID}}</div>
-    <div class="title">{{post.title}}</div>
+    <div class="title" (mousedown)=navigate(post.postingID)>{{post.title}}</div>
     <div class="writer">{{post.pWriter}}</div>
     <div class="date">{{post.pDate}}</div>
   </div>

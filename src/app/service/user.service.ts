@@ -40,15 +40,15 @@ export class UserService {
 
   // URL 검사
   submitUrlVirusTotal(id: string, url: string) {
-    return this.http.post(this.url + `/res_url/VirusTotal`, {id: id, res_url: url});
+    return this.http.post(this.url + '/url/virusTotal', {id: id, url: url});
   }
   submitUrl(id: string, url: string) {
-    return this.http.post(this.url + '/res_url', {id: id, res_url: url});
+    return this.http.post(this.url + '/url', {id: id, url: url});
   }
 
   // Hash 값 검사
   submitHash(id: string, hash: string) {
-    return this.http.post(this.url + '/hash', {id: id, res_hash: hash});
+    return this.http.post(this.url + '/hash', {id: id, hash: hash});
   }
 
   // 결과 리스트 받아오기
@@ -66,7 +66,7 @@ export class UserService {
 
     return this.http.get(this.url + `/report/virustotal?
     id=${id}&scan_id=${scan_id}&isfile=${isfile}&file_md5_url=${file_md5_url}`).pipe(
-      map((res: any) => res.result === 'success' ? res.data : [])
+      map((res: any) => res.result === 'success' ? res : [])
     );
   }
 
