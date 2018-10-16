@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../service/data.service';
 
 @Component({
   selector: 'app-top',
@@ -8,22 +9,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TopComponent implements OnInit {
 
-  button_hide: string;
+  msg: string;
   userID: string;
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private data: DataService) { }
 
   ngOnInit() {
     this.userID = sessionStorage.getItem('id');
-    this.hidebutton();
-  }
-
-  hidebutton() {
-    console.log(this.userID);
-
-    if (this.userID === null) {
-      this.button_hide = '1';
-    } else {
-      this.button_hide = '0';
-    }
+    this.msg = '1';
+    console.log(this.msg);
+    this.data.currentMessage.subscribe(message => this.msg = message);
   }
 }
