@@ -1,10 +1,10 @@
-<div>Sleepless</div>
+<div (mousedown)=goMain()>Sleepless</div>
 
 <div class=user [ngSwitch]="msg">
-    <button class=btn_form routerLink="/board" style="float:left">Board</button>
-    <button class=btn_form routerLink="/sign-up" *ngSwitchCase="1">Sign Up</button>
-    <button class=btn_form routerLink="/login" *ngSwitchCase="1">Log In</button>
-    <span class="userID" *ngSwitchCase="0">{{userID}}</span>
+    <button class=btn_form routerLink="/board">Board</button>
+    <button class=btn_form routerLink="/sign-up"*ngSwitchCase="0">Sign Up</button>
+    <button class=btn_form routerLink="/login" *ngSwitchCase="0">Log In</button>
+    <span class="userID" *ngSwitchCase="1">{{userID}}</span>
 </div>
 
 <div>

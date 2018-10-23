@@ -1,0 +1,11 @@
+<table class=result-table id=tableID>
+  <tr>
+    <td>Company</td> <td>detected</td> <td>ver</td> <td>update</td>
+  </tr>
+  <tr *ngFor='let res of report'>
+    <td>{{res.company}}</td>
+    <td>{{res.detected}}</td>
+    <td>{{res.version}}</td>
+    <td>{{res.update}}</td>
+  </tr>
+</table>

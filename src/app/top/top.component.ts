@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { DataService } from '../service/data.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-top',
@@ -9,14 +9,18 @@ import { DataService } from '../service/data.service';
 })
 export class TopComponent implements OnInit {
 
-  msg: string;
+  subscription: Subscription;
+  @Input() msg: string;
   userID: string;
-  constructor(private route: ActivatedRoute, private data: DataService) { }
+
+  constructor(private route: ActivatedRoute, private router: Router) {  }
 
   ngOnInit() {
     this.userID = sessionStorage.getItem('id');
-    this.msg = '1';
-    console.log(this.msg);
-    this.data.currentMessage.subscribe(message => this.msg = message);
+    console.log('top init : ' + this.msg + ' ' +  this.userID);
+  }
+
+  goMain() {
+    this.router.navigateByUrl('/main');
   }
 }

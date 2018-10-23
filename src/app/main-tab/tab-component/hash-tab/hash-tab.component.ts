@@ -27,10 +27,8 @@ export class HashTabComponent implements OnInit {
 
     // hash값 전송
       this.userService.submitHash(id, hash).subscribe((res: any) => {
-        if (res.result === 'success') {
           form.value.hash =  '';
-          alert('Hash' + res.result);
-        }
+          alert('Hash ' + res.result);
       });
     }
 }

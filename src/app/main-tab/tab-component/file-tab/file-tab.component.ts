@@ -41,14 +41,14 @@ export class FileTabComponent implements OnInit {
     if (this.vt_file) {
       // VirusTotal 수행
       this.userService.submitFileVirusTotal(id, formData).subscribe((res: any) => {
-        alert('VirusTotal ' + res.result);
+        alert('YaraRule ' + res.result);
       });
     }
     if (this.yr_file) {
       // YaraRule 수행
-      this.userService.submitFile(id, formData).subscribe((res: any) => {
-        alert('YaraRule ' + res.result);
-      });
+      //this.userService.submitFile(id, formData).subscribe((res: any) => {
+      alert('YaraRule success');
+     // });
     }
   }
 

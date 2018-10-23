@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router} from '@angular/router';
 
 import { UserService } from '../service/user.service';
-import { DataService } from '../service/data.service';
+import { IsLoginService } from '../service/is-login.service';
 
 @Component({
   selector: 'app-login',
@@ -13,18 +13,18 @@ import { DataService } from '../service/data.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  msg: string;
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router, private data: DataService) { }
+  constructor(private fb: FormBuilder,
+              private userService: UserService,
+              private router: Router,
+              private loginService: IsLoginService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
       id: ['', [Validators.required]],
       pwd: ['', [Validators.required]]
     });
-    this.msg = '1';
-    this.data.currentMessage.subscribe(message => this.msg = message);
-    console.log(this.msg);
+    console.log('login init : ' + sessionStorage.getItem('id'));
   }
 
   login(form: FormGroup) {
@@ -37,7 +37,9 @@ export class LoginComponent implements OnInit {
       if (res.result === 'success') {
         // 세션에 id 저장
         sessionStorage.setItem('id', id);
-        this.data.changeMessage('0');
+        this.loginService.setSubTitle('1');
+
+        console.log('login after : ' + sessionStorage.getItem('id'));
         // main 화면으로 전환
         this.router.navigateByUrl('');
 

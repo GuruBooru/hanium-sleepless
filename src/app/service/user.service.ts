@@ -59,14 +59,15 @@ export class UserService {
   }
 
   getReport(id, scan_id, file_md5_url, isfile): Observable<any> {
-    console.log(id);
-    console.log(scan_id);
-    console.log(file_md5_url);
-    console.log(isfile);
-
     return this.http.get(this.url + `/report/virustotal?
     id=${id}&scan_id=${scan_id}&isfile=${isfile}&file_md5_url=${file_md5_url}`).pipe(
       map((res: any) => res.result === 'success' ? res : [])
+    );
+  }
+  getYaraReport(id, scan_id, file_md5_url, isfile): Observable<any> {
+    return this.http.get(this.url + `/cuckoo/result?
+    id=${id}&scan_id=${scan_id}&isfile=${isfile}&file_md5_url=${file_md5_url}`).pipe(
+      map((res: any) => res.result === 'success' ? res : res)
     );
   }
 

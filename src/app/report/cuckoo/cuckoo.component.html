@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <td>reason</td>
+  </tr>
+  <tr *ngFor="let reason of report; ">
+    <td>{{reason.category}}</td>
+    <td>{{reason.ruleName}}</td>
+    <td>{{reason.registryPath}}</td>
+  </tr>
+</table>

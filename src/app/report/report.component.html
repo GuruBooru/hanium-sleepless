@@ -1,9 +1,20 @@
-<div id="content" #content *ngIf="reportInfo$ | async as report">
-  <h1>Sleepless</h1>
-  <p>{{report.positives}}</p>
-  <p>{{report.total}}</p>
-  <p>{{report.company}}</p>
+<div class=report id="content" #content >
+  <div *ngIf="reportInfo$ | async as report">
+    <h1>VirusTotal Result</h1>
 
+    <p>Scan Result</p>
+    <p>{{report.positives}}/{{report.total}}</p>
+
+    <app-company id="appCom" [result]="report.company" [cnt] = "report.total"></app-company>
+
+  </div>
+  <div *ngIf="yaraInfo$ | async as yara">
+    <h1>Sleepless</h1>
+
+    <p>Scan Result : {{yara.report_result}}</p>
+
+    <app-cuckoo [yara_result]="yara.reason"></app-cuckoo>
+  </div>
 </div>
 
 <button (click)="downloadPDF()">Export to PDF</button>
