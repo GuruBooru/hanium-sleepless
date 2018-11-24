@@ -14,13 +14,16 @@ export class PostService {
     this.url = global.url;
   }
 
+  // 게시판 받아오기
   getPosts(): Observable<any> {
     return this.http.get(this.url + '/posting-head');
   }
+  // 게시물 등록
   sendPost(data: any) {
     return this.http.post(this.url + '/board-posting', data);
   }
 
+  // 게시물 받아오기
   getPost(id): Observable<any> {
     return this.http.get(this.url + `/posting/${id}`);
   }

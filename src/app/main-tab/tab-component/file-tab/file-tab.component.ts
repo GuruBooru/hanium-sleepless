@@ -22,10 +22,12 @@ export class FileTabComponent implements OnInit {
     });
   }
 
+  // 바이러스 토탈 체크
   vtChecked() {
     this.vt_file ? this.vt_file = false : this.vt_file = true;
   }
 
+  // 야라 체크
   yrChecked() {
     this.yr_file ? this.yr_file = false : this.yr_file = true;
   }

@@ -1,6 +1,7 @@
 <form [formGroup]="urlTabForm" (ngSubmit)= "onSubmitURL(urlTabForm)">
   <input formControlName="url" type= "text" class="url" placeholder="URL을 입력하시오">
 
+  <!-- URL 검사 옵션 -->
   <div class = "user">
     <input id="checkbox1" name ="checkbox1" type="checkbox" (change)="$event? vtChecked() : null">
     <label for = "checkbox1">VirusTotal</label>

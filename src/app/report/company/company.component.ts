@@ -22,6 +22,7 @@ export class CompanyComponent implements OnInit {
       this.result = tmp;
     }
 
+    // 데이터 가공
     tmp = this.result.replace('{{', '[{');
     this.result = tmp.replace('}}', '}]');
 

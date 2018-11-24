@@ -58,6 +58,7 @@ export class UserService {
     );
   }
 
+  // 결과 리포트 받아오기
   getReport(id, scan_id, file_md5_url, isfile): Observable<any> {
     return this.http.get(this.url + `/report/virustotal?
     id=${id}&scan_id=${scan_id}&isfile=${isfile}&file_md5_url=${file_md5_url}`).pipe(
@@ -71,6 +72,7 @@ export class UserService {
     );
   }
 
+  // 게시판 받아오기
   getBoard() {
     return this.http.post(this.url + '/board', {});
   }

@@ -1,5 +1,6 @@
 <div (mousedown)=goMain()>Sleepless</div>
 
+<!-- 로그인 시 회원가입, 로그인 버튼 안보이게 -->
 <div class=user [ngSwitch]="msg">
     <button class=btn_form routerLink="/board">Board</button>
     <button class=btn_form routerLink="/sign-up"*ngSwitchCase="0">Sign Up</button>

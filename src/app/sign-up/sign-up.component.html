@@ -2,6 +2,7 @@
   <div class='sign-up-container' fxFlex.gt-sm="500px" fxLayout="column">
     <form class='sign-up-form' [formGroup]="signUpFormGroup" fxLayout="column" fxLayoutGap="1rem" (submit)="signup(signUpFormGroup)" ngNativeValidate>
 
+      <!-- 로그인 정보 입력 -->
       <div class="form_control_group">
         <table>
           <tr>
@@ -27,6 +28,7 @@
         </table>
       </div>
 
+      <!-- 기업 회원 체크 -->
       <div>
         <label> is Enterprise? </label>
         <input type="checkbox">

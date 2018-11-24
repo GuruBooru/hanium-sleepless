@@ -17,10 +17,12 @@ export class ListComponent implements OnInit {
     this.posts$ = this.postService.getPosts();
   }
 
+  // 게시물 작성 화면으로
   write() {
     this.router.navigate(['/write']);
   }
 
+  // 게시물
   navigate(id) {
     this.router.navigate([`/post/${id}`]);
   }

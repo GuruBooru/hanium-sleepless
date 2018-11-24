@@ -23,7 +23,7 @@ export class ReportComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  ngOnInit() {  // 보고서 정보 받아오기
     this.user_id = sessionStorage.getItem('id');
     this.scan_id = this.route.snapshot.params.scan_id;
     this.file_md5_url = this.route.snapshot.params.file_md5_url;
@@ -33,6 +33,7 @@ export class ReportComponent implements OnInit {
     this.yaraInfo$ = this.userService.getYaraReport(this.user_id, this.scan_id, this.file_md5_url, this.isfile);
   }
 
+  // PDF 출력
   public downloadPDF() {
     const doc = new jsPDF('p', 'pt', 'a4');
 
@@ -49,43 +50,4 @@ export class ReportComponent implements OnInit {
 
     doc.save('SleeplessReport.pdf');
   }
-
-    /*makePDF(selector = 'body') {
-    window.html2canvas = html2canvas;
-    const that = this;
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const canvas = pdf.canvas;
-    const pageWidth = 210;
-    const pageHeight = 210;
-    canvas.width = pageWidth;
-
-    const ele = document.querySelector(selector);
-    const width = ele.offsetWidth;
-    const height = ele.offsetHeight;
-    const imgHeight = pageWidth * height / width;
-
-    if (!ele) {
-      console.warn(selector + 'is not exist.');
-      return false;
-    }
-
-    html2canvas(ele, {
-      onrendered: function(canvas) {
-        let position = 0;
-        const imgData = canvas.toDataURL('image/png');
-        pdf.addImage(imgData, 'png', 0, position, pageWidth, imgHeight, undefined, 'slow');
-
-        let heightLeft = imgHeight;
-        heightLeft -= pageHeight;
-        while (heightLeft >= 0) {
-          position = heightLeft - imgHeight;
-          pdf.addPage();
-          pdf.addImage(imgData, 'png', 0, position, pageWidth, imgHeight);
-          heightLeft -= pageHeight;
-        }
-
-        pdf.save(that.propTitle.toLowerCase() + '.pdf');
-      }
-    });
-  }*/
 }

@@ -21,10 +21,12 @@ export class UrlTabComponent implements OnInit {
     });
   }
 
+  // 바이러스 토탈 체크
   vtChecked() {
     this.vt_url ? this.vt_url = false : this.vt_url = true;
   }
 
+  // 야라 체크
   yrChecked() {
     this.yr_url ? this.yr_url = false : this.yr_url = true;
   }

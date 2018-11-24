@@ -3,7 +3,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class IsLoginService {
+export class IsLoginService { // 로그인 확인
 
   subTitleChangeEvent: EventEmitter<string> = new EventEmitter<string>();
 

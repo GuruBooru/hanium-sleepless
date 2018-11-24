@@ -1,4 +1,5 @@
 <div class=report id="content" #content >
+  <!-- 바이러스 토탈 결과 -->
   <div *ngIf="reportInfo$ | async as report">
     <h1>VirusTotal Result</h1>
 
@@ -8,6 +9,7 @@
     <app-company id="appCom" [result]="report.company" [cnt] = "report.total"></app-company>
 
   </div>
+  <!-- 야라 결과 -->
   <div *ngIf="yaraInfo$ | async as yara">
     <h1>Sleepless</h1>
 

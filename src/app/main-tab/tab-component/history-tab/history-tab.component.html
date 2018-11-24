@@ -1,11 +1,14 @@
 <div>
   <table class='history'>
-    <tr class='tableName'> <!-- 테이블 헤더 -->
+    <!-- 테이블 헤더 -->
+    <tr class='tableName'> 
       <td>Dates</td>
       <td>Contents</td>
       <td>File/URL</td>
       <td></td>
     </tr>
+
+    <!-- 파일/URL 리스트 -->
     <tr *ngFor= 'let history of historyInfo | async; let i = index'>
       <td>{{history.date}}</td>
       <td>{{history.file_url_name}}</td>

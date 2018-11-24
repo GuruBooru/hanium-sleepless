@@ -20,7 +20,7 @@ export class TopComponent implements OnInit {
     console.log('top init : ' + this.msg + ' ' +  this.userID);
   }
 
-  goMain() {
+  goMain() {  // 상단 로그 클릭 시 메인 화면으로
     this.router.navigateByUrl('/main');
   }
 }

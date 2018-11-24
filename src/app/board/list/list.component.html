@@ -9,6 +9,7 @@
   <div class="date">날짜</div>
 </div>
 
+<!-- 게시물 목록 -->
 <div *ngIf="posts$ | async as res">
   <div class="container" *ngFor="let post of res">
     <div class="num">{{post.postingID}}</div>
